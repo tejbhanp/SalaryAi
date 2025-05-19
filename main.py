@@ -21,9 +21,9 @@ class SalaryInput(BaseModel):
     Job_Title: str = Field(..., alias="Job Title")
     Years_of_Experience: float = Field(..., alias="Years of Experience")
 
-    class Config:
-        allow_population_by_field_name = True
-
+    model_config = {
+        "populate_by_name": True
+    }
 
 @app.get("/")
 def root():
