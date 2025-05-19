@@ -42,8 +42,9 @@ def predict_salary(data: SalaryInput):
     }])
 
     # Make prediction
-    prediction = pipeline.predict(input_df)[0]
-    return {"Predicted Salary": f"${round(prediction, 2)} per year"}
+    prediction = pipeline.predict(input_df)[0] / 12
+    
+    return {"Predicted Salary": f"${round(prediction, 2)} / month"}
 
 @app.get("/dropdown-options")
 def get_dropdown_options():
