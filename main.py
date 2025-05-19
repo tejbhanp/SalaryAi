@@ -43,7 +43,7 @@ def predict_salary(data: SalaryInput):
 
     # Make prediction
     prediction = pipeline.predict(input_df)[0]
-    return {"Predicted Salary": f"${round(prediction, 2)} LPA"}
+    return {"Predicted Salary": f"${round(prediction, 2)}"}
 
 @app.get("/dropdown-options")
 def get_dropdown_options():
