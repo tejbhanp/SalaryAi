@@ -424,6 +424,42 @@
       }
     });
 
+    // Experience validation logic
+    const ageInput = document.getElementById('age');
+    const expInput = document.getElementById('experience');
+
+    function updateExperienceMax() {
+      const age = parseInt(ageInput.value, 10);
+      let maxExp = 40;
+      if (!isNaN(age)) {
+        // Minimum age to start experience is 18
+        maxExp = Math.max(0, age - 18);
+        // If age is 18, max experience is 1
+        if (age === 18) maxExp = 1;
+        // Clamp experience value if it exceeds maxExp
+        if (expInput.value !== "") {
+          const exp = parseInt(expInput.value, 10);
+          if (exp > maxExp) {
+            expInput.value = maxExp;
+          }
+        }
+      }
+      expInput.max = maxExp;
+    }
+
+    ageInput.addEventListener('input', updateExperienceMax);
+    expInput.addEventListener('input', function() {
+      const age = parseInt(ageInput.value, 10);
+      const exp = parseInt(expInput.value, 10);
+      if (!isNaN(age) && !isNaN(exp)) {
+        let maxExp = Math.max(0, age - 18);
+        if (age === 18) maxExp = 1;
+        if (exp > maxExp) {
+          expInput.value = maxExp;
+        }
+      }
+    });
+
     // Initialize form
     fetchOptions();
   </script>
