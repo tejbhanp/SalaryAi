@@ -48,7 +48,7 @@ def predict_salary(data: SalaryInput):
 
 @app.get("/dropdown-options")
 def get_dropdown_options():
-    df = pd.read_csv("dataset.csv")  # Load your dataset
+    df = pd.read_csv("fdataset.csv")  # Load your dataset
     return {
         "gender_options": ['Female', 'Male', 'Other'],
         "education_options": sorted(df["Education Level"].dropna().unique().tolist()),
