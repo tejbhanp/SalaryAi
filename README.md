@@ -24,7 +24,7 @@
 | Frontend         | HTML, CSS, JavaScript                |
 | Machine Learning | Pandas, Scikit-learn, Joblib         |
 | API Testing      | FastAPI Docs (Swagger UI)            |
-| Deployment       | Uvicorn (Locally) / Railway / Docker |
+| Deployment       | Uvicorn (Locally) / Render           |
 
 ---
 
